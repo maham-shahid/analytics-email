@@ -13,7 +13,7 @@ const emailsArray = [];
 let dictEmailBody = [];
 
 // TODO: api key not safe, fix and embed in environment
-sgMail.setApiKey('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');
+sgMail.setApiKey('apikey');
 // console.log(process.env.SENDGRID_API_KEY);
 
 const rule = new schedule.RecurrenceRule();
@@ -43,7 +43,7 @@ const job = schedule.scheduleJob(rule, () => {
 });
 
 const getAuthHeader = () => {
-	const un = 'b498c2c2d9a11a9dd9c15efd0a1a91fe';
+	const un = 'username';
 	const pwd = '';
 	const creds = `${un}:${pwd}`;
 	return `Basic ${Buffer.from(creds).toString('base64')}`
@@ -340,7 +340,7 @@ const sendEmails = () => {
 
 		let msg = {
 			to: item.email,
-			from: 'maham.shahid@apimatic.io',
+			from: 'sending email ID',
 			subject: 'APIMatic Usage Stats',
 			text: 'Your usage analytics for this week',
 			html: `${start}<br/><br/>${emailBody}<br/><br/>${end}`,
