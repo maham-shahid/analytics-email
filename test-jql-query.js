@@ -32,7 +32,7 @@ function main() {
     People()
   )
   .filter(function(tuple) {
-    return tuple.event && tuple.event.properties.$email == "mahum.shahid934+2@gmail.com";
+    return tuple.event && tuple.event.properties.$email == "email";
   })
   .groupBy([
       "event.name"
@@ -59,7 +59,7 @@ function main() {
     People()
   )
   .filter(function(tuple) {
-    return tuple.event && tuple.event.properties.$email == "mahum.shahid934+2@gmail.com";
+    return tuple.event && tuple.event.properties.$email == "email";
   })
   .reduce(mixpanel.reducer.count());
 }
@@ -91,6 +91,6 @@ function main() {
     People()
   )
   .filter(function(tuple) {
-    return tuple.event && tuple.event.properties.$email == "mahum.shahid934+2@gmail.com";
+    return tuple.event && tuple.event.properties.$email == "email";
   });
 }
